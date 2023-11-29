@@ -31,3 +31,6 @@ for template in templates/*; do
 		terraform -chdir="${template}" providers mirror "$HOME/.terraform.d/plugins"
 	fi
 done
+
+# Remove all JSON index files. They are not needed if the directory is used as a local filesystem mirror.
+find "$HOME/.terraform.d/plugins" -name "*.json" -type f -exec rm {} \;
