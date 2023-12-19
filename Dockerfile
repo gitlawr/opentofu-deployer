@@ -29,7 +29,7 @@ RUN KUBECTL_VER="v1.28.4"; \
     ln -s /usr/bin/kubectl /usr/bin/k
 
 # get OpenTofu
-RUN TOFU_VER="1.6.0-alpha5"; \
+RUN TOFU_VER="1.6.0-beta5"; \
     curl -sfL https://github.com/opentofu/opentofu/releases/download/v${TOFU_VER}/tofu_${TOFU_VER}_${TARGETOS}_${TARGETARCH}.zip -o /tmp/tofu.zip && \
     unzip /tmp/tofu.zip -d /usr/bin/ && \
     ln -s /usr/bin/tofu /usr/bin/terraform; \
